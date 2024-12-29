@@ -1,12 +1,14 @@
-def question(input):
-    if "hello" in input:
+def main():
+    question = (input("Greeting: ")).lower()
+    print(value(question))
+
+def value(greeting):
+    if "hello" in greeting:
         return "$0"
-    elif "h" in input:
+    elif "h" in greeting:
         return "$20"
     else: 
         return "$100"
-
-answer = question(input("Greeting: "))
-print(answer)
-
-# pedir pro ChatGPT escrever isso em duas funções
+    
+if __name__ == "__main__":
+    main()
