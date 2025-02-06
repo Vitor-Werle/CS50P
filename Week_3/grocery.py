@@ -5,7 +5,7 @@ def main():
 
 def get_int(): #explicar toda essa parte 
     words = []
-    verificar = set() # I didn't understand
+    verificar = set() # Assim que uma pessoa digita uma palavra, ela é armazenada em verificar, e se a pessoa digitar a mesma palavra novamente, ela não será armazenada novamente
     while True:
         try:
             lst = input("")

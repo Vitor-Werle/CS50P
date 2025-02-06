@@ -1,25 +1,38 @@
 def main():
     fraction = get_int()
-    convert_fraction(fraction)
+    n = convert_fraction(fraction)
+    print(n)
 
 def get_int():
     while True:
         try:
-           return input("Fraction: ")
+           fraction = input("Fraction: ")
+           x, y = fraction.split("/")
+           
+           x, y = int(x), int(y)
+
+           if y == 0:
+               raise ZeroDivisionError
+           if x > y:
+               raise ValueError
+           
+           return x, y
         except (ValueError, ZeroDivisionError):
             pass
 
-def convert_fraction(n):
-    x, y = n.split("/")
+def convert_fraction(fraction):
 
-    result = (int(x)/int(y)) * 100
+    x, y = fraction
+
+    result = (x / y) * 100
 
     if result < 1:
-        print("E")
+        return "E"
     elif result > 99:
-        print("F")
+        return "F"
     else:
-        print(round(f"{result}%"))
+        return f"{round(result)}%"
 
 
-main()
+if __name__ == "__main__":
+    main()

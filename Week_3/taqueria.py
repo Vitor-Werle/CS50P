@@ -21,10 +21,3 @@ while True:
             pass
     except EOFError:
         break
-
-
-
-# Recebe o nome (se for diferenta do lista, pedir de novo) e printar o valor
-# Se digitar mais nome, printe o valor total (do item anterior e desse)
-# Sai do loop quando usar o control-d
-# Se digitar o item errado pede para digitar de novo
