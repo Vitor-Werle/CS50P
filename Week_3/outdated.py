@@ -1,17 +1,48 @@
-months = {
-    "January": 1,
-    "February": 2,
-    "March": 3,
-    "April": 4,
-    "May": 5,
-    "June": 6,
-    "July": 7,
-    "August": 8,
-    "September": 9,
-    "October": 10,
-    "November": 11,
-    "December": 12
-}
+months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+]
+
+while True:
+    try:
+        date = input("Date: ").strip()
+
+        if "/" in date:
+            month, day, year = date.split("/")
+            month = int(month)
+            day = int(day)
+            year = int(year)
+            if 1 <= month <= 12 and 1 <= day <= 31 and len(str(year)) == 4:
+                break
+
+        elif "," in date:
+            date = date.replace(",", "")
+            month_text, day, year = date.split()
+
+            if month_text in months:
+                month = months.index(month_text) + 1
+                continue
+
+            day = int(day)
+            year = int(year)
+            if 1 <= day <= 31 and len(str(year)) == 4:
+                    break
+    except (ValueError, IndexError):
+        pass
+
+print(f"{year:04}-{month:02}-{day:02}")
+
+
 
 '''
 Criar um loop infinito para pedir uma data válida
