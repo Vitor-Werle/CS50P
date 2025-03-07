@@ -28,16 +28,16 @@ def main():
 
 def get_bitcoin_price():
     """
-    Fetch the current Bitcoin price in USD from CoinDesk's API.
+    Fetch the current Bitcoin price in USD from CoinCap's API.
     Returns the price as a float.
     Raises requests.RequestException for network issues.
     """
-    url = "https://api.coindesk.com/v1/bpi/currentprice.json"
+    url = "https://api.coincap.io/v2/assets/bitcoin"
     response = requests.get(url)
     response.raise_for_status()  # Raise an error for bad HTTP responses (4xx or 5xx)
 
     data = response.json()  # Parse the JSON response
-    return data["bpi"]["USD"]["rate_float"]
+    return float(data["data"]["priceUsd"])
 
 
 if __name__ == "__main__":
