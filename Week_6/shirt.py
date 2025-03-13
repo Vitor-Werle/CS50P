@@ -1,7 +1,7 @@
 import sys
 from PIL import Image, ImageOps
 
-muppet = Image.open("before1.jpg")
+muppet = Image.open("before3.jpg")
 shirt = Image.open("shirt.png")
 
 size = shirt.size
