@@ -7,11 +7,14 @@ def main():
 
 
 def validate(ip):
-    IPv4 = re.search(r"^[0-255]\.[0-255]\.[0-255]\.[0-255]$", ip)
-    if IPv4:
+    
+    pattern = r"^((\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])$"
+
+    match = re.search(pattern, ip)
+    
+    if match:
         return True
     return False
-
 
 
 
