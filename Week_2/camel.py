@@ -2,10 +2,8 @@ phrase = input("camelCase: ")
 result = ""
 
 for i in phrase:
-    if i[0].isupper:
-        result += i
-    elif i.isupper():
-        result += "_" + i
+    if i.isupper():
+        result += "_" + i.lower()
     else:
         result += i
 
